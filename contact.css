@@ -1,0 +1,444 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+body {
+    margin: 0;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+}
+
+header {
+    box-shadow: 0 0 30px rgb(153, 0, 255),0 2px 20px rgb(0, 183, 255);
+    display: flex;
+    justify-content:space-between;
+    height: 120px;
+}
+
+.text-header {
+    color: white;
+    font-size:clamp(25px,5vw,50px);
+    padding: 20px;
+    padding-left: 50px;
+    align-content: center;
+}
+
+
+.logo {
+    z-index:-1;
+    width: auto;
+}
+
+@media (max-width:500px) {
+    header {
+        height: 100px;
+    }
+    .sub-body1 {
+        margin-top: 20px;
+    }
+}
+.wapp {
+    position: fixed;
+    left: 15px;
+    bottom: 25px;
+    z-index: 700;
+}
+
+
+.wapp img{
+    width: clamp(60px,5vw,90px);
+    height:clamp(60px,5vw,90px);
+    
+}
+
+.sidebar {
+    position: fixed;
+    top: -20px;
+    right:-100%;
+    height:100vh;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:clamp(5px,3vw,50px);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.74);
+    list-style-type: none;
+    z-index: 998;
+    padding: 0;
+    transition: right 500ms ease-in-out;
+}
+
+.main-content {
+    filter: none;
+    position: relative;
+    z-index: -999;
+    transition: filter 500ms ease-in-out;
+}
+.main-content.blur {
+    z-index: 1;
+    filter: blur(5px);
+}
+
+.sidebar.open {
+    right: 0%;
+}
+
+
+.sidebar li{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:clamp(50px,5vw,70px);
+    transition: scale 100ms ease-in-out;
+}
+
+.sidebar li:hover {
+    scale:1.1;
+
+}
+
+@media (max-width:700px) {
+    .sidebar {
+        width: 100%;
+        gap: 10px;
+    }
+    .sidebar li{
+        width: 100%;
+
+    }
+}
+
+.sidebar li a{
+    color: white;
+    text-decoration: none;
+    font-size:clamp(30px,5vw,48px);
+}
+
+.sidebar i {
+    margin-right: 5px;
+    font-size:clamp(24px,5vw,48px);
+}
+
+
+.box {
+    width:clamp(60px,5vw,80px);
+    height:clamp(80px,5vw,80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-right: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    position:relative;
+    top: 20px;
+    right: 0;
+    z-index: 999;
+    filter: none;
+}
+
+.box.move {
+    position: fixed; 
+    right: 0;
+    top: 20px;
+}
+
+.linie1 {
+    border-radius: 10px;
+    width: 100%;
+    height: 8px;
+    background-color: rgb(255, 255, 255);
+    transition: transform 600ms ease-in-out,translate 600ms ease-in-out,scale 600ms ease-in-out;
+}
+
+.linie1.cross {
+    transform: rotate(45deg);
+    translate:0 18px;
+}
+.linie2.cross {
+    transform: rotate(-45deg);
+}
+.linie3.cross {
+    opacity: 0;
+}
+
+.linie2 {
+    border-radius: 10px;
+    width: 100%;
+    height: 8px;
+    background-color: rgb(255, 255, 255);
+    transition: transform 600ms ease-in-out,translate 600ms ease-in-out,scale 600ms ease-in-out;
+}
+
+.linie3 {
+    border-radius: 10px;
+    width: 100%;
+    height: 8px;
+    background-color: rgb(255, 255, 255);
+    transition:opacity 400ms ease-in-out;
+   
+}
+
+@media (max-width:600px){
+    .linie1 {
+        width: 60%;
+        height: 5px;
+    }
+    .linie2 {
+        width: 60%;
+        height: 5px;
+    }
+    .linie3 {
+        width: 60%;
+        height: 5px;
+    }
+    
+    .box {
+    gap: 7px;
+    margin-right: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    position:relative;
+    top: 10px;
+    right: 0;
+    z-index: 999;
+    filter: none;
+    }
+
+    .linie1.cross {
+    transform: rotate(45deg);
+    translate:0 12px;
+    }
+    .linie2.cross {
+    transform: rotate(-45deg);
+    }
+    .linie3.cross {
+    opacity: 0;
+    }
+
+    .box.move {
+    position: fixed; 
+    right: 0;
+    top: 10px;
+    }
+    .wapp {
+        bottom:10px;
+    }
+}
+
+/* aici se termina sectiunea header */
+
+/* aici incepe sectiunea de footer */
+
+.footer {
+    position: relative;
+    width: 100vw;
+    padding-top: 10px;
+    height:fit-content;
+    background-color: black;
+    color: white;
+    z-index: 900;
+    border-top: 1px solid rgba(255, 255, 255, 0.47);
+}
+
+.follow{
+    font-size: clamp(20px, 5vw,40px);
+    margin-left: 15px;
+    text-align:left;
+    width: fit-content;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+    justify-content: left;
+    margin-top: 10px;
+    margin-top: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+.footer img {
+    width:clamp(40px,5vw,60px);
+}
+
+.autor {
+    margin-top: 42px;
+    font-size:clamp(20px,4vw,30px);
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/* aici se termina sectiunea de footer */
+
+.main-body{
+    width: 100%;
+    height: 80vh;
+    margin-top: 50px;
+}
+.locatie{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.locatie a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.locatie a:hover{
+    text-decoration: underline;
+}
+.locatie img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.locatie-container{
+    color: rgb(0, 0, 0);
+    background-color: hsla(0, 0%, 27%, 0.507);
+    position: absolute;
+    display: flex;
+    justify-content:left;
+    box-sizing: border-box;
+    align-items: center;
+    width: 84%;
+    height: 100px;
+    top:-100%;
+    left: 50%;
+    translate: -50% -50%;
+    animation: slideUp2 800ms ease-in-out forwards 400ms;
+    border-radius: 10px;
+}
+.linie{
+    margin-left:0;
+    height: 125%;
+    min-width: 18%;
+    background-color: rgb(119, 0, 255);
+    color: white;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 50px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 10px;
+}
+
+.linie:hover > i{
+    scale: 1.2;
+}
+.linie i{
+    transition: scale ease-in-out 400ms;
+}
+
+.locatie-text{
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: clamp(18px,4vw,32px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    line-height: 26px;
+}
+
+.tel-container{
+    color: rgb(0, 0, 0);
+    background-color: hsla(0, 0%, 27%, 0.507);
+    position: absolute;
+    display: flex;
+    justify-content:left;
+    box-sizing: border-box;
+    align-items: center;
+    width: 84%;
+    height: 100px;
+    top:-100%;
+    left: 50%;
+    translate: -50% -50%;
+    animation: slideUp1 800ms ease-in-out forwards;
+    border-radius: 10px;
+}
+
+.tel-text{
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: clamp(18px,4vw,32px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    line-height: 26px;
+}
+.mail-container{
+    color: rgb(0, 0, 0);
+    background-color: hsla(0, 0%, 27%, 0.507);
+    position: absolute;
+    display: flex;
+    justify-content:left;
+    box-sizing: border-box;
+    align-items: center;
+    width: 84%;
+    height: 100px;
+    top:-100%;
+    left: 50%;
+    translate: -50% -50%;
+    animation: slideUp3 800ms ease-in-out forwards 800ms;
+    border-radius: 10px;
+}
+
+.mail-text{
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: clamp(16px,4vw,32px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    line-height: 26px;
+}
+
+@keyframes slideUp1 {
+    100%{
+        top:20%;
+    }
+}
+@keyframes slideUp2 {
+    100%{
+        top:48%;
+    }
+}
+@keyframes slideUp3 {
+    100%{
+        top:76%;
+    }
+}
+
+.google-maps{
+    margin-top:30px;
+    margin-bottom: 60px;
+    width: 100%;
+    filter:brightness(70%) contrast(200%);
+}
+.google-maps iframe{
+    width: 100%;
+}
